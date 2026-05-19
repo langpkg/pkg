@@ -27,8 +27,8 @@
   "dependencies"                : {
     "@inquirer/prompts"         : "^8.4.3",
     "@langpkg/cli"              : "^0.0.2",
-    "@langpkg/mcs_fmt"          : "^0.1.0",
-    "@langpkg/mcs_gen"          : "^0.1.0",
+    "@langpkg/mcs_fmt"          : "^0.1.1",
+    "@langpkg/mcs_gen"          : "^0.1.1",
     "boxen"                     : "^8.0.1",
     "chalk"                     : "^5.6.2",
     "glob"                      : "^13.0.6",
