@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,11 +20,11 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
     <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
     <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
-    <img src="https://img.shields.io/badge/test-blue"/>
+    <a href="./test.md"><img src="https://img.shields.io/badge/test-black"/></a>
     <a href="./lint.md"><img src="https://img.shields.io/badge/lint-black"/></a>
     <a href="./build.md"><img src="https://img.shields.io/badge/build-black"/></a>
     <a href="./link.md"><img src="https://img.shields.io/badge/link-black"/></a>
@@ -33,7 +33,7 @@
     <a href="./version.md"><img src="https://img.shields.io/badge/version-black"/></a>
     <a href="./publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
     <a href="./list.md"><img src="https://img.shields.io/badge/list-black"/></a>
-    <a href="./exec.md"><img src="https://img.shields.io/badge/exec-black"/></a>
+    <img src="https://img.shields.io/badge/exec-blue"/>
     <a href="./fmt.md"><img src="https://img.shields.io/badge/fmt-black"/></a>
 
 </div>
@@ -45,27 +45,17 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Test
+- ## Exec
 
-    > The `test` command runs your test suite with Bun's fast, Jest-compatible test runner. Tests are discovered automatically in files matching `*.test.ts`, `*_test.ts`, `*.spec.ts`, or `*_spec.ts` patterns.
+    > The `exec` command executes arbitrary TypeScript/JavaScript code directly in the project context.
 
     ```bash
-    # Basic usage
-    pkg test                        # Run all tests
-    pkg test src/                   # Run tests in directory
-    pkg test file.test.ts           # Run single file
+    # Execute code
+    pkg exec "console.log('hello')"
+    pkg exec "console.log(process.cwd())"
 
-    # Watch & modes
-    pkg test --watch                # Re-run on file changes
-    pkg test --coverage             # Generate coverage report
-    pkg test --concurrent           # Run tests in parallel
-
-    # Filtering & control
-    pkg test -t "pattern"           # Filter tests by name (--testNamePattern)
-    pkg test --bail                 # Bail after first failure
-    pkg test --bail=2               # Bail after 2 failures
-    pkg test --retry=3              # Retry failed tests 3 times
-    pkg test --timeout=10000        # Per-test timeout in milliseconds
+    # With imports
+    pkg exec "import { readFileSync } from 'fs'; console.log(readFileSync('package.json', 'utf-8'))"
     ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->

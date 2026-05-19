@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
     <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
     <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
@@ -29,10 +29,10 @@
     <a href="./build.md"><img src="https://img.shields.io/badge/build-black"/></a>
     <a href="./link.md"><img src="https://img.shields.io/badge/link-black"/></a>
     <a href="./unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
-    <img src="https://img.shields.io/badge/update-blue"/>
+    <a href="./update.md"><img src="https://img.shields.io/badge/update-black"/></a>
     <a href="./version.md"><img src="https://img.shields.io/badge/version-black"/></a>
     <a href="./publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
-    <a href="./list.md"><img src="https://img.shields.io/badge/list-black"/></a>
+    <img src="https://img.shields.io/badge/list-blue"/>
     <a href="./exec.md"><img src="https://img.shields.io/badge/exec-black"/></a>
     <a href="./fmt.md"><img src="https://img.shields.io/badge/fmt-black"/></a>
 
@@ -45,23 +45,20 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Update
+- ## List
 
-    > The `update` command checks and installs newer versions of your project dependencies, with options for interactive selection or latest versions.
+    > The `list` command displays all installed packages and their versions (local or global).
 
     ```bash
-    # Basic usage
-    pkg up                          # Check for updates (interactive)
-    pkg up express                  # Update specific package
-    pkg up express react            # Update multiple packages
+    # List local dependencies
+    pkg ls                          # List project packages
 
-    # Modes
-    pkg up -i                       # Interactive mode (--interactive)
-    pkg up -l                       # Update to latest (--latest)
-    pkg up express -l               # Update express to latest
+    # List global packages
+    pkg ls -g                       # List global (--global)
 
     # Aliases
-    pkg update express              # Full command name
+    pkg list                        # Full command name
+    pkg list --global               # Full option name
     ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->

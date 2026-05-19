@@ -21,20 +21,20 @@
     <img src="https://img.shields.io/github/stars/langpkg/pkg?style=social" alt="GitHub Repo stars" />
     <br>
     <img src="https://img.shields.io/badge/Home-blue"/>
-    <a href="./docs/cmd/init.md"><img src="https://img.shields.io/badge/init-black"/></a>
-    <a href="./docs/cmd/install.md"><img src="https://img.shields.io/badge/install-black"/></a>
-    <a href="./docs/cmd/uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
-    <a href="./docs/cmd/test.md"><img src="https://img.shields.io/badge/test-black"/></a>
-    <a href="./docs/cmd/lint.md"><img src="https://img.shields.io/badge/lint-black"/></a>
-    <a href="./docs/cmd/build.md"><img src="https://img.shields.io/badge/build-black"/></a>
-    <a href="./docs/cmd/link.md"><img src="https://img.shields.io/badge/link-black"/></a>
-    <a href="./docs/cmd/unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
-    <a href="./docs/cmd/update.md"><img src="https://img.shields.io/badge/update-black"/></a>
-    <a href="./docs/cmd/version.md"><img src="https://img.shields.io/badge/version-black"/></a>
-    <a href="./docs/cmd/publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
-    <a href="./docs/cmd/list.md"><img src="https://img.shields.io/badge/list-black"/></a>
-    <a href="./docs/cmd/exec.md"><img src="https://img.shields.io/badge/exec-black"/></a>
-    <a href="./docs/cmd/fmt.md"><img src="https://img.shields.io/badge/fmt-black"/></a>
+    <a href="./docs/init.md"><img src="https://img.shields.io/badge/init-black"/></a>
+    <a href="./docs/install.md"><img src="https://img.shields.io/badge/install-black"/></a>
+    <a href="./docs/uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
+    <a href="./docs/test.md"><img src="https://img.shields.io/badge/test-black"/></a>
+    <a href="./docs/lint.md"><img src="https://img.shields.io/badge/lint-black"/></a>
+    <a href="./docs/build.md"><img src="https://img.shields.io/badge/build-black"/></a>
+    <a href="./docs/link.md"><img src="https://img.shields.io/badge/link-black"/></a>
+    <a href="./docs/unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
+    <a href="./docs/update.md"><img src="https://img.shields.io/badge/update-black"/></a>
+    <a href="./docs/version.md"><img src="https://img.shields.io/badge/version-black"/></a>
+    <a href="./docs/publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
+    <a href="./docs/list.md"><img src="https://img.shields.io/badge/list-black"/></a>
+    <a href="./docs/exec.md"><img src="https://img.shields.io/badge/exec-black"/></a>
+    <a href="./docs/fmt.md"><img src="https://img.shields.io/badge/fmt-black"/></a>
 
 </div>
 

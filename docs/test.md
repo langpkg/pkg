@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,15 +20,15 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
     <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
     <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
-    <a href="./test.md"><img src="https://img.shields.io/badge/test-black"/></a>
+    <img src="https://img.shields.io/badge/test-blue"/>
     <a href="./lint.md"><img src="https://img.shields.io/badge/lint-black"/></a>
     <a href="./build.md"><img src="https://img.shields.io/badge/build-black"/></a>
     <a href="./link.md"><img src="https://img.shields.io/badge/link-black"/></a>
-    <img src="https://img.shields.io/badge/unlink-blue"/>
+    <a href="./unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
     <a href="./update.md"><img src="https://img.shields.io/badge/update-black"/></a>
     <a href="./version.md"><img src="https://img.shields.io/badge/version-black"/></a>
     <a href="./publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
@@ -45,17 +45,27 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Unlink
+- ## Test
 
-    > The `unlink` command removes symlinks of your local package from global `node_modules`, or unlinks global packages from the project.
+    > The `test` command runs your test suite with Bun's fast, Jest-compatible test runner. Tests are discovered automatically in files matching `*.test.ts`, `*_test.ts`, `*.spec.ts`, or `*_spec.ts` patterns.
 
     ```bash
-    # Unlink current package from global
-    pkg unlink
+    # Basic usage
+    pkg test                        # Run all tests
+    pkg test src/                   # Run tests in directory
+    pkg test file.test.ts           # Run single file
 
-    # Unlink global packages from project
-    pkg unlink @org/pkg1
-    pkg unlink @org/pkg1 my-pkg
+    # Watch & modes
+    pkg test --watch                # Re-run on file changes
+    pkg test --coverage             # Generate coverage report
+    pkg test --concurrent           # Run tests in parallel
+
+    # Filtering & control
+    pkg test -t "pattern"           # Filter tests by name (--testNamePattern)
+    pkg test --bail                 # Bail after first failure
+    pkg test --bail=2               # Bail after 2 failures
+    pkg test --retry=3              # Retry failed tests 3 times
+    pkg test --timeout=10000        # Per-test timeout in milliseconds
     ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->

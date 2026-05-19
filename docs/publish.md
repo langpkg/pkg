@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
     <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
     <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
@@ -31,10 +31,10 @@
     <a href="./unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
     <a href="./update.md"><img src="https://img.shields.io/badge/update-black"/></a>
     <a href="./version.md"><img src="https://img.shields.io/badge/version-black"/></a>
-    <a href="./publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
+    <img src="https://img.shields.io/badge/publish-blue"/>
     <a href="./list.md"><img src="https://img.shields.io/badge/list-black"/></a>
     <a href="./exec.md"><img src="https://img.shields.io/badge/exec-black"/></a>
-    <img src="https://img.shields.io/badge/fmt-blue"/>
+    <a href="./fmt.md"><img src="https://img.shields.io/badge/fmt-black"/></a>
 
 </div>
 <br>
@@ -45,23 +45,21 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Format
+- ## Publish
 
-    > The `fmt` command formats TypeScript and JSON files according to MCS (Maysara Code Style) conventions with zero external dependencies. It detects issues, applies fixes automatically, and maintains a cache for incremental formatting.
+    > The `publish` command publishes your package to npm registry. Requires build before publishing.
 
     ```bash
-    # Format current directory
-    pkg fmt
+    # Basic usage
+    pkg pub                         # Publish to npm
 
-    # Format specific directory
-    pkg fmt src/
+    # Options
+    pkg pub --tag beta              # Publish with dist-tag
+    pkg pub --tag next              # Tag: beta, next, etc.
+    pkg pub -y                      # Public access (default)
 
-    # Format specific file
-    pkg fmt src/app.ts
-
-    # Clear cache before formatting
-    pkg fmt --clean
-    pkg fmt -c src/
+    # Aliases
+    pkg publish                     # Full command name
     ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->

@@ -300,7 +300,7 @@
                 // Single-word  : lowercase (src, test, core, docs)
                 // Multi-word   : snake_case (user_handlers, config_loaders)
                 // Exceptions   : Special names use UPPER_CASE or PascalCase (CMD/, MCS/, API/)
-                // See docs/cmd/fmt.md for complete naming convention rules
+                // See cmd/fmt.md for complete naming convention rules
 
                 const mk = (rel: string) => {
                     const full = path.join(targetDir, rel);

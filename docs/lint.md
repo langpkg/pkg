@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,14 +20,14 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
     <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
     <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
     <a href="./test.md"><img src="https://img.shields.io/badge/test-black"/></a>
-    <a href="./lint.md"><img src="https://img.shields.io/badge/lint-black"/></a>
+    <img src="https://img.shields.io/badge/lint-blue"/>
     <a href="./build.md"><img src="https://img.shields.io/badge/build-black"/></a>
-    <img src="https://img.shields.io/badge/link-blue"/>
+    <a href="./link.md"><img src="https://img.shields.io/badge/link-black"/></a>
     <a href="./unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
     <a href="./update.md"><img src="https://img.shields.io/badge/update-black"/></a>
     <a href="./version.md"><img src="https://img.shields.io/badge/version-black"/></a>
@@ -45,17 +45,25 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Link
+- ## Lint
 
-    > The `link` command creates a symlink of your local package into global `node_modules` for local development, or links global packages to the project.
+    > The `lint` command checks your TypeScript code for style violations and potential errors using ESLint. It can auto-fix many violations and report results in various formats.
 
     ```bash
-    # Link current package to global
-    pkg link
+    # Basic usage
+    pkg lint                        # Lint src/ and test/
+    pkg lint src/                   # Lint specific directory
+    pkg lint file.ts                # Lint single file
 
-    # Link global packages to project
-    pkg link @org/pkg1
-    pkg link @org/pkg1 my-pkg
+    # Fixing
+    pkg lint --fix                  # Auto-fix violations
+    pkg lint --fix-dry-run          # Preview fixes without writing
+
+    # Reports & control
+    pkg lint --format json          # Output format (stylish, json, compact)
+    pkg lint --max-warnings 5       # Fail if warnings exceed limit
+    pkg lint --quiet                # Errors only, suppress warnings
+    pkg lint --cache                # Faster runs via cache
     ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->

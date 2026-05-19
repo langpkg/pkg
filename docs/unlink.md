@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
     <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
     <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
@@ -28,10 +28,10 @@
     <a href="./lint.md"><img src="https://img.shields.io/badge/lint-black"/></a>
     <a href="./build.md"><img src="https://img.shields.io/badge/build-black"/></a>
     <a href="./link.md"><img src="https://img.shields.io/badge/link-black"/></a>
-    <a href="./unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
+    <img src="https://img.shields.io/badge/unlink-blue"/>
     <a href="./update.md"><img src="https://img.shields.io/badge/update-black"/></a>
     <a href="./version.md"><img src="https://img.shields.io/badge/version-black"/></a>
-    <img src="https://img.shields.io/badge/publish-blue"/>
+    <a href="./publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
     <a href="./list.md"><img src="https://img.shields.io/badge/list-black"/></a>
     <a href="./exec.md"><img src="https://img.shields.io/badge/exec-black"/></a>
     <a href="./fmt.md"><img src="https://img.shields.io/badge/fmt-black"/></a>
@@ -45,21 +45,17 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Publish
+- ## Unlink
 
-    > The `publish` command publishes your package to npm registry. Requires build before publishing.
+    > The `unlink` command removes symlinks of your local package from global `node_modules`, or unlinks global packages from the project.
 
     ```bash
-    # Basic usage
-    pkg pub                         # Publish to npm
+    # Unlink current package from global
+    pkg unlink
 
-    # Options
-    pkg pub --tag beta              # Publish with dist-tag
-    pkg pub --tag next              # Tag: beta, next, etc.
-    pkg pub -y                      # Public access (default)
-
-    # Aliases
-    pkg publish                     # Full command name
+    # Unlink global packages from project
+    pkg unlink @org/pkg1
+    pkg unlink @org/pkg1 my-pkg
     ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->

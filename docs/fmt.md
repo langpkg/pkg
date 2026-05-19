@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,8 +20,8 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
-    <img src="https://img.shields.io/badge/init-blue"/>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
     <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
     <a href="./test.md"><img src="https://img.shields.io/badge/test-black"/></a>
@@ -34,10 +34,9 @@
     <a href="./publish.md"><img src="https://img.shields.io/badge/publish-black"/></a>
     <a href="./list.md"><img src="https://img.shields.io/badge/list-black"/></a>
     <a href="./exec.md"><img src="https://img.shields.io/badge/exec-black"/></a>
-    <a href="./fmt.md"><img src="https://img.shields.io/badge/fmt-black"/></a>
+    <img src="https://img.shields.io/badge/fmt-blue"/>
 
 </div>
-
 <br>
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->
@@ -46,71 +45,24 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Init
+- ## Format
 
-    > The `init` command scaffolds a new project with a complete folder structure, configuration files, and TypeScript setup.
+    > The `fmt` command formats TypeScript and JSON files according to MCS (Maysara Code Style) conventions with zero external dependencies. It detects issues, applies fixes automatically, and maintains a cache for incremental formatting.
 
     ```bash
-    pkg init                        # Init current dir, prompt for name & type
-    pkg init <name>                 # Create <name>/ subfolder
-    pkg init <name> --as cli        # CLI package
-    pkg init <name> --as pkg        # Normal package
-    pkg init <name> --dir <dir>     # Custom output directory
-    pkg init <name> --as cli -y     # Skip all prompts
+    # Format current directory
+    pkg fmt
+
+    # Format specific directory
+    pkg fmt src/
+
+    # Format specific file
+    pkg fmt src/app.ts
+
+    # Clear cache before formatting
+    pkg fmt --clean
+    pkg fmt -c src/
     ```
-
-    ---
-
-    - #### Target Directory
-
-        | Command                            | Target               |
-        | ---------------------------------- | -------------------- |
-        | `pkg init`                         | Current dir          |
-        | `pkg init mycli`                   | `<cwd>/mycli/`       |
-        | `pkg init @langpkg/cli`            | `<cwd>/cli/`         |
-        | `pkg init mycli --dir ../projects` | `../projects/mycli/` |
-
-        > If target already has `package.json`, command stops immediately.
-
-    - #### Project Types
-
-        | Mode     | Output    | Include     |
-        | -------- | --------- | ----------- |
-        | `normal` | ESM + CJS | --          |
-        | `cli`    | ESM + CJS | + Bin field |
-
-    - #### Prompts (when args not provided)
-
-        - **Package name** → plain or scoped (`@org/repo`)
-        - **Project type** → Normal package or CLI package
-        - **Metadata** → description, version (`0.0.1`), license (`MIT`)
-        - **Author** → `Name, Email, GitHubUser` (comma-separated, all optional)
-        - **Repository** → GitHub org + repo name
-
-        > Use `-y` with `<name>` and `--as` to skip all prompts.
-
-    - #### Generated Structure
-
-        ```
-        root/
-        ┡ .vscode/settings.json
-        ┃
-        ┡ assets/img/
-        ┡ docs/                   # .gitkeep
-        ┃
-        ┡ src/index.ts
-        ┡ test/index.test.ts
-        ┃
-        ┡ README.md
-        ┡ package.json
-        ┃
-        ┡ tsconfig.json
-        ┡ tsup.config.ts
-        ┡ eslint.config.mjs
-        ┃
-        ┡ LICENSE
-        ┕ .gitignore
-        ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->
 

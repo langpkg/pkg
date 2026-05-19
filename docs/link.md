@@ -3,7 +3,7 @@
 <br>
 <div align="center">
     <p>
-        <img src="../../assets/img/logo.png" alt="logo" style="" height="60" />
+        <img src="../assets/img/logo.png" alt="logo" style="" height="60" />
     </p>
 </div>
 
@@ -20,14 +20,14 @@
     <img src="https://img.shields.io/github/issues/langpkg/lexer?style=flat" alt="Github Repo Issues" />
     <img src="https://img.shields.io/github/stars/langpkg/lexer?style=social" alt="GitHub Repo stars" />
     <br>
-    <a href="../../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
+    <a href="../README.md"><img src="https://img.shields.io/badge/Home-black"/></a>
     <a href="./init.md"><img src="https://img.shields.io/badge/init-black"/></a>
     <a href="./install.md"><img src="https://img.shields.io/badge/install-black"/></a>
-    <img src="https://img.shields.io/badge/uninstall-blue"/>
+    <a href="./uninstall.md"><img src="https://img.shields.io/badge/uninstall-black"/></a>
     <a href="./test.md"><img src="https://img.shields.io/badge/test-black"/></a>
     <a href="./lint.md"><img src="https://img.shields.io/badge/lint-black"/></a>
     <a href="./build.md"><img src="https://img.shields.io/badge/build-black"/></a>
-    <a href="./link.md"><img src="https://img.shields.io/badge/link-black"/></a>
+    <img src="https://img.shields.io/badge/link-blue"/>
     <a href="./unlink.md"><img src="https://img.shields.io/badge/unlink-black"/></a>
     <a href="./update.md"><img src="https://img.shields.io/badge/update-black"/></a>
     <a href="./version.md"><img src="https://img.shields.io/badge/version-black"/></a>
@@ -45,20 +45,17 @@
 
 <!-- ╔═══════════════════════════ DOC ════════════════════════════╗ -->
 
-- ## Uninstall
+- ## Link
 
-    > The `uninstall` command removes packages from your project dependencies.
+    > The `link` command creates a symlink of your local package into global `node_modules` for local development, or links global packages to the project.
 
     ```bash
-    # Basic usage
-    pkg un express                  # Remove package
-    pkg un express react            # Remove multiple packages
+    # Link current package to global
+    pkg link
 
-    # Modes
-    pkg un express -g               # Remove global package (--global)
-
-    # Aliases
-    pkg uninstall express           # Full command name
+    # Link global packages to project
+    pkg link @org/pkg1
+    pkg link @org/pkg1 my-pkg
     ```
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->
