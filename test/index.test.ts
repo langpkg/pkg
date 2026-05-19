@@ -17,9 +17,6 @@
 
     describe('@langpkg/pkg', () => {
 
-        // (formatter tests in `src\core\utils\fmt\test`)   DONE
-        // (generator tests in `src\core\utils\gen\test`)   TODO
-
         test('should run the app without throwing errors', () => {
             const app = new App({
                 name        : 'pkg',
