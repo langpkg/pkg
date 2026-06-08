@@ -1,7 +1,7 @@
 {
 
   "name"                        : "@langpkg/pkg",
-  "version"                     : "0.0.3",
+  "version"                     : "0.0.4",
   "description"                 : "Creates and manages packages",
   "keywords"                    : ["langpkg", "pkg", "framework"],
   "license"                     : "MIT",
@@ -25,10 +25,10 @@
   "scripts"                     : {},
 
   "dependencies"                : {
-    "@inquirer/prompts"         : "^8.4.3",
+    "@inquirer/prompts"         : "^8.5.2",
     "@langpkg/cli"              : "^0.0.2",
-    "@langpkg/mcs_fmt"          : "^0.1.1",
-    "@langpkg/mcs_gen"          : "^0.1.1",
+    "@langpkg/mcs_fmt"          : "^0.1.2",
+    "@langpkg/mcs_gen"          : "^0.1.2",
     "boxen"                     : "^8.0.1",
     "chalk"                     : "^5.6.2",
     "glob"                      : "^13.0.6",
@@ -38,13 +38,13 @@
     "@eslint/js"                : "^10.0.1",
     "@stylistic/eslint-plugin"  : "^5.10.0",
     "@types/bun"                : "^1.3.14",
-    "@types/node"               : "^25.9.1",
+    "@types/node"               : "^25.9.2",
     "bun-plugin-dts"            : "^0.4.0",
     "bun-types"                 : "^1.3.14",
     "ts-node"                   : "^10.9.2",
     "tsup"                      : "^8.5.1",
     "typescript"                : "^6.0.3",
-    "typescript-eslint"         : "^8.59.4"
+    "typescript-eslint"         : "^8.61.0"
   }
 
 }

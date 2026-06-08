@@ -335,6 +335,12 @@
         return /^[a-z0-9_]+(\.[a-z0-9]+)?$/.test(name);
     }
 
+    function isValidFileName(name: string): boolean {
+        // Allow snake_case with optional .config (e.g., tsup.config)
+        // also allow - not _
+        return /^[a-z0-9_-]+(\.[a-z0-9]+)?$/.test(name);
+    }
+
     // Check file and folder naming conventions (snake_case)
     function checkNaming(dir: string): FormatIssue[] {
         const issues: FormatIssue[] = [];
@@ -348,7 +354,7 @@
                 const nameWithoutExt = fileName.replace(/\.ts$/, '');
 
                 // Check file naming
-                if (!isValidSnakeCase(nameWithoutExt)) {
+                if (!isValidFileName(nameWithoutExt)) {
                     issues.push({
                         file            : filepath,
                         line            : 1,
