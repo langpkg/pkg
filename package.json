@@ -1,7 +1,7 @@
 {
 
   "name"                        : "@langpkg/pkg",
-  "version"                     : "0.0.6",
+  "version"                     : "0.0.7",
   "description"                 : "Creates and manages packages",
   "keywords"                    : ["langpkg", "pkg", "framework"],
   "license"                     : "MIT",

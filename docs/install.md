@@ -13,7 +13,7 @@
         <b>Stop worrying about configuration. Start building.</b>
         <br>
     </p>
-    <img data="version" src="https://img.shields.io/badge/v-0.0.6-black"/>
+    <img data="version" src="https://img.shields.io/badge/v-0.0.7-black"/>
     <a href="https://github.com/langpkg"><img src="https://img.shields.io/badge/@-langpkg-black"/></a>
     <br>
     <img src="https://img.shields.io/badge/coverage-~%25-brightgreen" alt="Test Coverage" />

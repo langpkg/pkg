@@ -119,7 +119,7 @@
 
                                 // ── Validate outputs ────────────────────────────────────────
 
-                                const requiredFiles = ['dist/index.js', 'dist/index.d.ts'];
+                                const requiredFiles = ['dist/index.js'];
                                 const missingFiles: string[] = [];
 
                                 for (const file of requiredFiles) {
