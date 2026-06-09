@@ -6,6 +6,7 @@
 
 // ╔════════════════════════════════════════ PACK ════════════════════════════════════════╗
 
+    import type { ProjectType, ParsedCommand }                  from './common/types';
     import      { UninstallCommand, UninstallCommandParams }    from './cmd/uninstall';
     import      { InstallCommand, InstallCommandParams }        from './cmd/install';
     import      { PublishCommand, PublishCommandParams }        from './cmd/publish';
@@ -21,7 +22,6 @@
     import      { ListCommand, ListCommandParams }              from './cmd/list';
     import      { FmtCommand, FmtCommandParams }                from './cmd/fmt';
     import      { cli }                                         from '@langpkg/cli';
-    import type { ProjectType, ParsedCommand }                  from './common/types';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
 
