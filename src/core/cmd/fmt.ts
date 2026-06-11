@@ -13,7 +13,7 @@
     import { CacheManager }                                   from '../utils/cache';
     import { formatTS, formatJSON, formatMD, FormatIssue }    from '@langpkg/mcs_fmt';
     import { resolve, isAbsolute, join }                      from 'path';
-    import { readdirSync }                                    from 'fs';
+    import { readdirSync, readFileSync }                      from 'fs';
     import { glob }                                           from 'glob';
 
 // ╚══════════════════════════════════════════════════════════════════════════════════════╝
@@ -21,6 +21,11 @@
 
 
 // ╔════════════════════════════════════════ TYPE ════════════════════════════════════════╗
+
+    const BLOCKED_DIRS = new Set([
+        'node_modules', 'dist', 'build', 'out', 'coverage',
+        '.git', '.svn', '.hg', '.cache', '.temp', '.tmp', '.vscode', '.idea', '.vs', '.DS_Store', '.pkg', '.mine'
+    ]);
 
     export interface FmtCommandParams extends CommandParams {
         args       : {
@@ -95,8 +100,10 @@
                         const jsonFiles: string[] = [];
                         const mdFiles: string[] = [];
 
-                        // Collect TypeScript files from src/, test/, bench/
-                        for (const dir of ['src', 'test', 'bench']) {
+                        const tsDirs = this.getFmtDirs();
+
+                        // Collect TypeScript files from configured directories
+                        for (const dir of tsDirs) {
                             if (isDirExists(dir)) {
                                 this.collectTsFiles(dir, tsFiles);
                             }
@@ -212,7 +219,7 @@
 
                         // Validate naming conventions (warnings only)
                         const namingIssues: FormatIssue[] = [];
-                        for (const dir of ['src', 'test', 'bench']) {
+                        for (const dir of tsDirs) {
                             if (isDirExists(dir)) {
                                 namingIssues.push(...checkNaming(dir));
                             }
@@ -265,7 +272,7 @@
                     const entries = readdirSync(dir, { withFileTypes: true });
                     for (const entry of entries) {
                         const fullPath = join(dir, entry.name);
-                        if (entry.isDirectory() && !entry.name.startsWith('.')) {
+                        if (entry.isDirectory() && !entry.name.startsWith('.') && !BLOCKED_DIRS.has(entry.name)) {
                             this.collectTsFiles(fullPath, result);
                         } else if (entry.isFile() && entry.name.endsWith('.ts')) {
                             result.push(fullPath);
@@ -281,7 +288,7 @@
                     const entries = readdirSync(dir, { withFileTypes: true });
                     for (const entry of entries) {
                         const fullPath = join(dir, entry.name);
-                        if (entry.isDirectory() && !entry.name.startsWith('.')) {
+                        if (entry.isDirectory() && !entry.name.startsWith('.') && !BLOCKED_DIRS.has(entry.name)) {
                             this.collectJsonFiles(fullPath, result);
                         } else if (entry.isFile() && entry.name.endsWith('.json')) {
                             result.push(fullPath);
@@ -303,6 +310,19 @@
                 return forwardPath;
             }
 
+            private getFmtDirs(): string[] {
+                try {
+                    const pkgPath = resolve(process.cwd(), 'package.json');
+                    const pkgJson = JSON.parse(readFileSync(pkgPath, 'utf-8'));
+                    if (Array.isArray(pkgJson?.pkg?.fmt?.ts) && pkgJson.pkg.fmt.ts.length > 0) {
+                        return pkgJson.pkg.fmt.ts;
+                    }
+                } catch {
+                    // Fall through to defaults
+                }
+                return ['src', 'test', 'bench'];
+            }
+
         // └────────────────────────────────────────────────────────────────────┘
 
     }
@@ -319,7 +339,7 @@
             const entries = readdirSync(dir, { withFileTypes: true });
             for (const entry of entries) {
                 const fullPath = join(dir, entry.name);
-                if (entry.isDirectory() && !entry.name.startsWith('.') && entry.name !== 'node_modules') {
+                if (entry.isDirectory() && !entry.name.startsWith('.') && !BLOCKED_DIRS.has(entry.name)) {
                     collectMdFiles(fullPath, result);
                 } else if (entry.isFile() && entry.name.endsWith('.md')) {
                     result.push(fullPath);
@@ -346,7 +366,8 @@
         const issues: FormatIssue[] = [];
 
         try {
-            const files = glob.sync(`${dir}/**/*.ts`, { dot: false });
+            const ignorePatterns = Array.from(BLOCKED_DIRS).map((d) => `**/${d}/**`);
+            const files = glob.sync(`${dir}/**/*.ts`, { dot: false, ignore: ignorePatterns });
 
             for (const filepath of files) {
                 // Extract file name without extension

@@ -13,7 +13,7 @@
         <b>Stop worrying about configuration. Start building.</b>
         <br>
     </p>
-    <img data="version" src="https://img.shields.io/badge/v-0.0.8-black"/>
+    <img data="version" src="https://img.shields.io/badge/v-0.0.10-black"/>
     <a href="https://github.com/langpkg"><img src="https://img.shields.io/badge/@-langpkg-black"/></a>
     <br>
     <img src="https://img.shields.io/badge/coverage-~%25-brightgreen" alt="Test Coverage" />
@@ -63,6 +63,22 @@
     pkg fmt --clean
     pkg fmt -c src/
     ```
+
+- ## Configuration
+
+    > By default, `fmt` collects TypeScript files from `src/`, `test/`, and `bench/`. You can override these directories in `package.json` under `pkg.fmt`:
+
+    ```jsonc
+    {
+        "pkg": {
+            "fmt": {
+                "ts": ["src", "test", "bench", "scripts"]
+            }
+        }
+    }
+    ```
+
+    > If `pkg.fmt.ts` is not defined or empty, the default directories are used.
 
 <!-- ╚════════════════════════════════════════════════════════════╝ -->
 
