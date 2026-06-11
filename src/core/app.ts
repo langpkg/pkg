@@ -149,14 +149,6 @@
                     name                            : 'test',
                     description                     : 'Run tests with bun test',
 
-                    args                            : [
-                        {
-                            name                    : 'patterns',
-                            required                : false,
-                            description             : 'Test file patterns (e.g., src/, file.test.ts)',
-                        },
-                    ],
-
                     allowDynamicArgs                : true,
 
                     options                         : [
