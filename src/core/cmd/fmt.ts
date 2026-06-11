@@ -113,6 +113,13 @@
                         if (isFileExists('eslint.config.mjs')) tsFiles.push('eslint.config.mjs');
                         if (isFileExists('tsup.config.ts')) tsFiles.push('tsup.config.ts');
 
+                        // Collect JSON files
+                        if (isFileExists('package.json')) jsonFiles.push('package.json');
+                        if (isFileExists('tsconfig.json')) jsonFiles.push('tsconfig.json');
+                        if (isFileExists('tsconfig.build.json')) jsonFiles.push('tsconfig.build.json');
+                        if (isFileExists('tsconfig.dev.json')) jsonFiles.push('tsconfig.dev.json');
+                        if (isFileExists('jsconfig.json')) jsonFiles.push('jsconfig.json');
+
                         // Collect Markdown files: README and docs/ tree
                         if (isFileExists('README.md')) mdFiles.push('README.md');
                         if (isDirExists('docs')) collectMdFiles('docs', mdFiles);
